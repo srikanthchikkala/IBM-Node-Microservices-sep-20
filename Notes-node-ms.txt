@@ -1,0 +1,472 @@
+JAVA SCRIPT:
+
+java script object based, functional style,event driven , async programming language.
+
+version
+ECMA -Committe
+1996---1997
+java script 1.0 - ES 1.0
+
+ES 3.0 -1999
+
+ES 4.0 2007
+
+ES 5.0 2008
+
+ES 6.0 -2015
+
+ES 7.0,8.0
+
+Applications of java script :
+
+Why js was created?
+
+ to create dynamic web documents and manipulate web documents- HTML
+
+2008- js started moving towards building network applications.-nodejs
+
+Now javascript is every where.
+
+
+Learning path:
+
+es 6:
+
+1. java  script fundamentals
+2. java script functional programming 
+3. Object based features and implementation
+4. DOM 
+5. NETWORK Progamming - ajax
+etc....
+
+javascript runtime :
+
+where you are running javascript code.
+
+1. embeded runtime.
+   the runtime embeded into another software.
+ browser
+v8-name of the runtime, inside chrome.
+
+2.standalone runtime.
+
+  node js -v8.
+
+
+Lab:
+
+-node js
+-vs code
+-docker , docker compose
+
+
+
+1. java  script fundamentals
+
+variable,types, values.
+
+javascript is untyped/dyamic typed language.
+
+keyword variableName=value(literals)
+
+var | let | const | this | variablename=literal
+
+var-es5
+let and const -es6 to replace var.
+
+this - for object variables
+
+literals - values: based on literal only the type of variable is decided during runtime.
+
+types of literals
+
+1.string
+2.number
+3.boolean
+4.undefined
+5.nan
+6.infinity
+7.null
+8.function
+9.object
+
+types ;
+
+1.string
+2.number
+3.boolean
+4.undefined
+5.funciton
+6.object
+
+Strings:
+
+//how to declare variables.
+//strings
+//strings can be encapuslated in three ways -single,double,backtick
+
+let firstName='Subramanian';
+let lastName="Murugan";
+let city=`Coimbatore`;
+console.log("Name" + firstName + lastName + city);
+console.log("Name" , firstName , lastName , city);
+//ES 6 : ${} -string interpolatation.
+console.log(`Name ${firstName}  ${lastName}  ${city}`);
+//use case of back tick : multiline string literal
+let title ='IBM'
+let document=`
+        <html>
+            <head>
+                <title>
+                      ${title}
+                </title>
+            </head>
+            <body>
+            </body>
+        </html>
+`
+console.log(document);
+
+
+
+Numbers:
+numbers : 64 bit double.
+
+
+
+NaN :
+not a number , which is number which holds numerical computation
+error results.
+Nan if you get, your code is buggy code : runtime 
+
+if you get nan you must fix it.
+
+When you will get NaN?
+
+use case 1; when you do compuation against undefined.
+
+let qty;
+let price = 1000;
+let totalPrice = qty * price;
+
+
+
+booleans:
+true/false
+decision making : if...else, if..else if...else
+
+/**
+ * Truthy values:
+ *  In javascript everything is true execpt the following values
+ * 
+ * fasly values
+ *  1.boolean false
+ *  2.Empty string "" ,''
+ *  3.0
+ *  4.undefined
+ *  5.NaN
+ *  6.null
+
+
+Opeartors:
+.........
+
+ == , === !=,!==,!,!!
+
+ == : compares based content only, it does not take care about type system.
+
+if you compare only value, then it is not right comparsion.
+
+== consider buggy operator.
+
+=== : compares both value + type : this is right comparsion:
+
+Best practice : dont use == for comparsion.
+
+!= : dont use
+!== : use
+
+//operators
+
+//==
+let x = 10;
+let y = 10;
+if (x == y) {
+    console.log('X and Y are equal')
+} else {
+    console.log('X AND Y not equal')
+}
+
+let a = "10"; //string
+let b = 10; //number
+if (a === b) { // string == number
+    console.log('A and B are equal')
+} else {
+    console.log('A AND B not equal')
+}
+
+
+//const  vs let
+//let can allow to reinitalize the values at any point of time in program.
+
+let myvar = 10;
+console.log(`${typeof myvar} and its value is ${myvar}`)
+myvar = 'hello';
+console.log(`${typeof myvar} and its value is ${myvar}`)
+myvar = true;
+console.log(`${typeof myvar} and its value is ${myvar}`)
+
+//constants ; not able to reinitalize.
+
+const mynewVar = 10;
+console.log(`${typeof mynewVar} and its value is ${mynewVar}`)
+//mynewVar =9000;
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Programming pardagims:
+
+1.Object oriented
+2.procedural programming
+3.functional programming
+.......
+
+ANY PL - based on any of programming pardagim
+
+c - pp.
+java - oo
+
+languages may follow one paradigm - c ++
+
+languages may follow many paradigm in one place - hybrid paradgims.
+
+js is multi paradgim.  
+
+  - object based
+  - functional style 
+  - event driven style
+
+js functional style features:
+
+- function is abstraction in js.
+- function is value/literal
+    - can be assigned to a variable
+    - can be passed a parameter 
+    - can be returned as return value.
+
+ES 6 ARROW FUNCTIONS:
+....................
+
+ES 6 ARROW functions are replacment of function declaration syntax in es 5.
+
+let hello = function(message = 'default') {
+    console.log('greet', message)
+    return 'greeter';
+};
+console.log(hello('hello'))
+
+
+Function as parameter;
+
+function can be as a value to another function.
+
+
+
+Objects:
+-create objects
+-object properties
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+What is node.js?
+
+node.js is platform to run javascript programms.
+
+How java script is executed under the hood?
+
+source code - .java - .js
+ 
+compiled code .class 
+
+executable code .os specific.
+
+pl compilers
+-separte  -
+ code---compiler---compiled code(disk file).
+
+-in memory compilation
+ code --compiler---compiled code(RAM)
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Concurrency: Threadings
+.......................
+
+javascript is not multi threaded.
+Like java,c++ we cant create threads - js single threaded.
+
+javascript was not designed for io operations.
+
+The first IO Was introduced in 2005 - ajax.
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+Blocking IO and non blocking IO : Sync and async 
+..........................................
+
+Blocking IO:
+
+Input/output (IO) refers to interaction with devices such as a hard drive, network or database. 
+
+Generally anything that is not happening in the CPU is called IO.
+
+When you call an API that requests data from IO, you will not get a response instantly, but with some delay. This delay can be very small for requesting a file on a hard drive, and much longer when requesting data from a network. 
+
+This is because the data you request from IO devices has to travel longer to the caller. For instance:
+A file stored on a hard drive must be transferred through SATA cables and main board buses to the CPU
+
+The data from a network resource located on a server far away must travel through network cables, routers and eventually the network interface card (NIC) in your computer to the CPU.
+
+
+Calling an API that requests data from IO will cause the running thread to “block”, i.e. 
+
+it is waiting until the requested data has returned to the caller.
+
+When a thread is blocked in Linux, it will be put in a Sleep state by the kernel until data has returned to the caller
+
+Threads in sleep state immediately give up its access to the CPU, so to not waste CPU time.
+
+After IO is ready, the thread is taken out of the Sleep state and put in Runnable state.
+
+Threads in this state are eligible to be executed on the CPU again.
+
+The thread scheduler will put the thread on a CPU when one is available. 
+
+The process of taking threads on and off the CPU is called context switching.
+
+
+Why non-blocking IO?
+
+The main benefit of non-blocking IO is that we need less threads to handle the same amount of IO requests.
+
+When multiple calls to IO are done using blocking IO, for each call a new thread is created. 
+
+A thread costs around 1MB, and there are some costs due to context switching. 
+
+If you have a web server that handles 50k connections per second,
+
+a thread per connection can be quite expensive.
+
+
+Types of blocking
+  There are actually two types of thread blocking:
+
+1.CPU-bound blocking
+2.IO-bound blocking
+
+CPU-bound blocking
+In this case the thread gets blocked because of some CPU intensive task it performs takes more time than “instantly”. 
+
+For example when generating a bunch of prime numbers or rendering a 3d model. With CPU-bound blocking the thread is blocked because it’s actively being executed on the processor.
+
+
+IO-bound blocking
+
+Here, the thread gets blocked because it has to wait for data to return from an IO source, such as a network or a hard drive. 
+
+The kernel will notice that there is no data available from IO and will therefore put the thread in some “sleep” state. Hence, with IO-bound blocking the thread is not¹ actively being executed on the processor.
+
+
+Non-blocking IO
+
+APIs that use blocking IO will block the thread until data from IO has returned.
+
+ So what happens when you call a non-blocking API? Very well, it returns instantly and will not block the thread. 
+
+This means the thread can immediately continue executing the code that comes after calling the API.
+
+When data has returned from IO, the caller will be notified that the data is ready. 
+
+This is generally done with a callback function that has access to the returned data.
+
+
+
+Network IO and sockets:
+
+To understand how non-blocking IO works under the hood we first need some understanding of how IO works at low level. 
+
+A common use case for non-blocking IO is network IO, so it is best explained in this context. 
+
+
+At kernel level a socket is used as an abstraction to communicate with a NIC.
+
+Socket is entry and exit point of data transmission from hardware to os
+
+
+ This socket takes care of reading and writing data to/from the NIC, which in turn sends the data over the UTP cable on its way to the internet. 
+
+For example, if you go to a URL in your browser; at low level the data in your HTTP request is written to a socket using the send(2) system call. 
+
+When a response is returned, the response data can be read from that socket using the recv(2) 
+ system call.
+ The important thing to understand here is that when data has returned from network IO, it is ready to be read from the socket.
+
+
+Blocking are implemented at os level using os socket apis.
+ eg : send and recv ------->are blocking apis
+
+if any language uses these api as sys call under hood , those api are blocking apis
+
+if you take java
+
+ readFile()---------send()------>socket---|
+
+
+Non-blocking IO under the hood
+
+
+Most non-blocking frameworks use an infinite loop that constantly checks (polls) if data is returned from IO.
+
+This is often called the event loop. 
+
+An event loop is literally a while(true) loop that in each iteration will check if data is ready to read from a network socket. 
+
+Technically, sockets are implemented as file descriptors (FD) on UNIX systems.
+
+It is therefore better to say that a FD is checked for ready data. 
+
+The list of FDs that you want to check for ready data is generally called the interest list.
+
+
+Operatings systems provide event loop construct for making non blocking io:
+
+
+Let’s zoom a bit in on the event loop:
+......................................
+
+ Each (major) operating system provides kernel level APIs to help create an event loop.
+
+In Linux there is epoll or io_uring, BSD uses kqueue and Windows has IOCP. Each of these APIs is able to check FDs for ready data with a computational complexity of around.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
